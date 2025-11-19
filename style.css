@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(150deg, #6a4bc4, #8cb5ff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-area input {
+  font-size: 19px;
+  color: #333;
+}
+
+.wrapper {
+  width: 430px;
+  background: rgba(255,255,255,0.15);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(9px);
+  color: #fff;
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 20px;
+  font-size: 30px;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+.search-area {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-area input {
+  padding: 10px;
+  width: 220px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+
+.search-area input.shake {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+.search-area button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #ffe680;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+
+.search-area button:active::after {
+  content: "";
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  top: -20px;
+  left: -20px;
+  animation: ripple 0.4s linear;
+}
+
+@keyframes ripple {
+  from { transform: scale(0); opacity: 1; }
+  to { transform: scale(1.5); opacity: 0; }
+}
+
+.fade {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.forecast-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.card {
+  min-width: 120px;
+  padding: 12px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: scale(1.07);
+  background: rgba(255,255,255,0.35);
+}
